@@ -1,5 +1,7 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
 :root {
@@ -9,7 +11,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #18181b;
     --foreground: #ededed;
   }
 }
@@ -23,5 +25,590 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .foreground {
+    @apply text-[#140d30];
+  }
+
+  /* primary = #f6403d, secondary = #140d30, danger = #bb2124, success = #22bb33, warning = #f0ad4e, info = #5bc0de, default = #aaaaaa */
+
+  .bg-primary {
+    @apply bg-[#f6403d];
+  }
+
+  .text-primary {
+    @apply text-[#f6403d];
+  }
+
+  .border-primary {
+    @apply border-[#f6403d];
+  }
+
+  /* primary-light = #e57377, primary-dark = #d52c35 */
+
+  .bg-primary-light {
+    @apply bg-[#e57377];
+  }
+
+  .text-primary-light {
+    @apply text-[#e57377];
+  }
+
+  .border-primary-light {
+    @apply border-[#e57377];
+  }
+
+  .bg-primary-dark {
+    @apply bg-[#d52c35];
+  }
+
+  .text-primary-dark {
+    @apply text-[#d52c35];
+  }
+
+  .border-primary-dark {
+    @apply border-[#d52c35];
+  }
+
+  .bg-secondary {
+    @apply bg-[#2e2d5d];
+  }
+
+  .text-secondary {
+    @apply text-[#2e2d5d];
+  }
+
+  .border-secondary {
+    @apply border-[#2e2d5d];
+  }
+
+  /* secondary-light = #4e4e78, secondary-dark = #201c46 */
+
+  .bg-secondary-light {
+    @apply bg-[#4e4e78];
+  }
+
+  .text-secondary-light {
+    @apply text-[#4e4e78];
+  }
+
+  .border-secondary-light {
+    @apply border-[#4e4e78];
+  }
+
+  .bg-secondary-dark {
+    @apply bg-[#201c46];
+  }
+
+  .text-secondary-dark {
+    @apply text-[#201c46];
+  }
+
+  .border-secondary-dark {
+    @apply border-[#201c46];
+  }
+
+  .bg-danger {
+    @apply bg-[#c72a19];
+  }
+
+  .text-danger {
+    @apply text-[#c72a19];
+  }
+
+  .border-danger {
+    @apply border-[#c72a19];
+  }
+
+  /* danger-light = #c5605c, danger-dark = #a91615 */
+
+  .bg-danger-light {
+    @apply bg-[#c5605c];
+  }
+
+  .text-danger-light {
+    @apply text-[#c5605c];
+  }
+
+  .border-danger-light {
+    @apply border-[#c5605c];
+  }
+
+  .bg-danger-dark {
+    @apply bg-[#a91615];
+  }
+
+  .text-danger-dark {
+    @apply text-[#a91615];
+  }
+
+  .border-danger-dark {
+    @apply border-[#a91615];
+  }
+
+  .bg-success {
+    @apply bg-[#107c10];
+  }
+
+  .success-text {
+    @apply text-[#107c10];
+  }
+
+  .border-success {
+    @apply border-[#107c10];
+  }
+
+  /* success-light = #74d176, success-dark = #00991e */
+
+  .bg-success-light {
+    @apply bg-[#74d176];
+  }
+
+  .text-success-light {
+    @apply text-[#74d176];
+  }
+
+  .border-success-light {
+    @apply border-[#74d176];
+  }
+
+  .bg-success-dark {
+    @apply bg-[#00991e];
+  }
+
+  .text-success-dark {
+    @apply text-[#00991e];
+  }
+
+  .border-success-dark {
+    @apply border-[#00991e];
+  }
+
+  .bg-warning {
+    @apply bg-[#ebb509];
+  }
+
+  .text-warning {
+    @apply text-[#ebb509];
+  }
+
+  .border-warning {
+    @apply border-[#ebb509];
+  }
+
+  /* warning-light = #f0cc4e, warning-dark = #eb9600 */
+
+  .bg-warning-light {
+    @apply bg-[#f0cc4e];
+  }
+
+  .text-warning-light {
+    @apply text-[#f0cc4e];
+  }
+
+  .border-warning-light {
+    @apply border-[#f0cc4e];
+  }
+
+  .bg-warning-dark {
+    @apply bg-[#eb9600];
+  }
+
+  .text-warning-dark {
+    @apply text-[#eb9600];
+  }
+
+  .border-warning-dark {
+    @apply border-[#eb9600];
+  }
+
+  .bg-info {
+    @apply bg-[#5bc0de];
+  }
+
+  .text-info {
+    @apply text-[#5bc0de];
+  }
+
+  .border-info {
+    @apply border-[#5bc0de];
+  }
+
+  /* info-light = #6fd3ed, info-dark = #4b9ab0 */
+
+  .bg-info-light {
+    @apply bg-[#6fd3ed];
+  }
+
+  .text-info-light {
+    @apply text-[#6fd3ed];
+  }
+
+  .border-info-light {
+    @apply border-[#6fd3ed];
+  }
+
+  .bg-info-dark {
+    @apply bg-[#4b9ab0];
+  }
+
+  .text-info-dark {
+    @apply text-[#4b9ab0];
+  }
+
+  .border-info-dark {
+    @apply border-[#4b9ab0];
+  }
+
+  .bg-default {
+    @apply bg-[#aaaaaa];
+  }
+
+  .text-default {
+    @apply text-[#aaaaaa];
+  }
+
+  .border-default {
+    @apply border-[#aaaaaa];
+  }
+
+  /* default-light = #eaeaea, default-dark = #6b6b6b */
+
+  .bg-default-light {
+    @apply bg-[#eaeaea];
+  }
+
+  .text-default-light {
+    @apply text-[#eaeaea];
+  }
+
+  .border-default-light {
+    @apply border-[#eaeaea];
+  }
+
+  .bg-default-dark {
+    @apply bg-[#6b6b6b];
+  }
+
+  .text-default-dark {
+    @apply text-[#6b6b6b];
+  }
+
+  .border-default-dark {
+    @apply border-[#6b6b6b];
+  }
+
+  .bg-primary-hover {
+    @apply hover:bg-primary;
+    @apply hover:text-white;
+  }
+
+  .bg-secondary-hover {
+    @apply hover:bg-secondary;
+    @apply hover:text-white;
+  }
+
+  .bg-danger-hover {
+    @apply hover:bg-danger;
+    @apply hover:text-white;
+  }
+
+  .bg-success-hover {
+    @apply hover:bg-success;
+    @apply hover:text-white;
+  }
+
+  .bg-warning-hover {
+    @apply hover:bg-warning;
+    @apply hover:text-white;
+  }
+
+  .bg-info-hover {
+    @apply hover:bg-info;
+    @apply hover:text-white;
+  }
+
+  .bg-default-hover {
+    @apply hover:bg-default;
+    @apply hover:text-white;
+  }
+
+  
+}
+
+@layer components {
+
+  /* ButtonContained */
+  .btn {
+    @apply bg-zinc-500 px-4 py-2 rounded-md text-white font-semibold;
+
+    @apply select-none;
+
+    @apply transform duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary;
+
+    @apply hover:bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary;
+
+    @apply hover:bg-secondary-dark;
+  }
+
+  .btn-danger {
+    @apply bg-danger;
+
+    @apply hover:bg-danger-dark;
+  }
+
+  .btn-success {
+    @apply bg-success;
+
+    @apply hover:bg-success-dark;
+  }
+
+  .btn-warning {
+    @apply bg-warning text-zinc-900;
+
+    @apply hover:bg-warning-dark;
+  }
+
+  .btn-info {
+    @apply bg-info;
+
+    @apply hover:bg-info-dark;
+  }
+
+  .btn-default {
+    @apply bg-default;
+
+    @apply hover:bg-default-dark;
+  }
+
+  /* Button Outlined */
+  .btn-outlined {
+    @apply border-2 px-4 py-2 bg-transparent rounded-md font-semibold;
+
+    @apply select-none;
+
+    @apply transform duration-300;
+  }
+
+  .btn-outlined-hover {
+    @apply hover:bg-opacity-30;
+  }
+
+  .btn-outlined-primary {
+    @apply border-primary text-primary;
+
+    @apply hover:bg-primary;
+
+    @apply btn-outlined-hover;
+  }
+
+  .btn-outlined-secondary {
+    @apply border-secondary text-secondary;
+
+    @apply hover:bg-secondary;
+
+    @apply btn-outlined-hover;
+  }
+
+  .btn-outlined-danger {
+    @apply border-danger text-danger;
+
+    @apply hover:bg-danger;
+
+    @apply btn-outlined-hover;
+  }
+
+  .btn-outlined-success {
+    @apply border-success success-text;
+
+    @apply hover:bg-success;
+
+    @apply btn-outlined-hover;
+  }
+
+  .btn-outlined-warning {
+    @apply border-warning text-warning;
+
+    @apply hover:bg-warning;
+
+    @apply btn-outlined-hover;
+  }
+
+  .btn-outlined-info {
+    @apply border-info text-info;
+
+    @apply hover:bg-info;
+
+    @apply btn-outlined-hover;
+  }
+
+  .btn-outlined-default {
+    @apply border-default text-default;
+
+    @apply hover:bg-default;
+
+    @apply btn-outlined-hover;
+  }
+
+  /* Button Text */
+  .btn-text {
+    @apply bg-transparent px-4 py-2 font-semibold;
+
+    @apply select-none;
+
+    @apply transform duration-300;
+
+    @apply border-transparent border-b-2;
+  }
+
+  .btn-text-hover {
+    @apply hover:bg-opacity-100;
+
+    @apply border-opacity-100;
+  }
+
+  .btn-text-primary {
+    @apply text-primary;
+
+    @apply hover:border-primary;
+  }
+
+  .btn-text-secondary {
+    @apply text-secondary;
+
+    @apply hover:border-secondary;
+  }
+
+  .btn-text-danger {
+    @apply text-danger;
+
+    @apply hover:border-danger;
+  }
+
+  .btn-text-success {
+    @apply success-text;
+
+    @apply hover:border-success;
+  }
+
+  .btn-text-warning {
+    @apply text-warning;
+
+    @apply hover:border-warning;
+  }
+
+  .btn-text-info {
+    @apply text-info;
+
+    @apply hover:border-info;
+  }
+
+  .btn-text-default {
+    @apply text-default;
+
+    @apply hover:border-default;
+  }
+
+  /* Text Field */
+
+  .text-field {
+    @apply px-4 py-2 rounded-md border-2 border-default;
+    @apply focus:outline-none focus:border-2;
+    @apply focus:border-default-dark;
+    @apply transition duration-300;
+    @apply text-zinc-900;
+    @apply dark:text-zinc-100 dark:bg-zinc-900;
+  }
+
+  .text-field-label {
+    @apply flex flex-col items-start;
+    @apply text-default-dark;
+  }
+
+  .text-field-helper {
+    @apply flex items-start ml-1;
+    @apply text-default-dark italic;
+  }
+
+  .text-field-error {
+    @apply flex flex-1 justify-end mr-1;
+
+    @apply w-full;
+
+    @apply text-danger-light italic;
+  }
+
+  .text-field-error-active {
+    @apply text-danger-light;
+    @apply border-danger-light focus:border-danger-dark;
+  }
+  .text-field-primary {
+    @apply border-primary focus:border-primary-dark;
+  }
+
+  .text-field-secondary {
+    @apply border-secondary focus:border-secondary-dark;
+  }
+
+  .text-field-danger {
+    @apply border-danger focus:border-danger-dark;
+  }
+
+  .text-field-success {
+    @apply border-success focus:border-success-dark;
+  }
+
+  .text-field-warning {
+    @apply border-warning focus:border-warning-dark;
+  }
+
+  .text-field-info {
+    @apply border-info focus:border-info-dark;
+  }
+
+  .text-field-default {
+    @apply border-default focus:border-default-dark;
+  }
+
+  .text-field-label-primary {
+    @apply text-primary-dark;
+  }
+
+  .text-field-label-secondary {
+    @apply text-secondary-dark;
+  }
+
+  .text-field-label-danger {
+    @apply text-danger-dark;
+  }
+
+  .text-field-label-success {
+    @apply text-success-dark;
+  }
+
+  .text-field-label-warning {
+    @apply text-warning-dark;
+  }
+
+  .text-field-label-info {
+    @apply text-info-dark;
+  }
+
+  .text-field-label-default {
+    @apply text-default-dark;
+  }
+  
+  .bg-primary-hover {
+    @apply hover:bg-primary;
+    @apply hover:text-white;
   }
 }
