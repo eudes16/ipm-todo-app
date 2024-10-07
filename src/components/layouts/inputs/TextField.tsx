@@ -1,4 +1,4 @@
-import { DefaultColors, TextFieldTypes } from '@/components/shared/base.types';
+import { DefaultColors, TextFieldTypes } from '@/shared/base.types';
 import { FC } from 'react';
 
 interface TextFieldProps {
@@ -14,15 +14,16 @@ interface TextFieldProps {
     helperText?: string;
     error?: boolean;
     textError?: string;
+    
 }
 
 const TextField: FC<TextFieldProps> = (props) => {
 
 
     return (
-        <div>
+        <div className='flex w-full'>
             <label
-                className='text-field-label'
+                className='text-field-label flex w-full'
                 htmlFor={props?.name}
             >
 
@@ -31,18 +32,17 @@ const TextField: FC<TextFieldProps> = (props) => {
                 `}>
                     {props?.label}
                 </span>
-                <input
+                <input 
                     className={`
-                text-field
-                text-field-${props.colors ?? "default"}
-                ${props.error ? "text-field-error-active" : ""}
-                ${props.className ?? ""}
-                `}
+                        text-field
+                        text-field-${props.colors ?? "default"}
+                        ${props.error ? "text-field-error-active" : ""}
+                        ${props.className ?? ""}
+                    `}
                     id={props?.id}
                     name={props?.name}
                     placeholder={props?.placeholder}
                     value={props?.value}
-
                     type={props?.type ?? "text"}
                     onInput={props?.onInput}
                 />

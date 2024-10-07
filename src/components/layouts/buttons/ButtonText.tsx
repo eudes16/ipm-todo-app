@@ -1,9 +1,10 @@
-import { DefaultColors, DefaultSizes } from '@/components/shared/base.types';
+import { DefaultColors, DefaultSizes } from '@/shared/base.types';
 import { cloneElement, FC } from 'react';
 
 interface ButtonTextProps {
     icon?: any;
     text?: string;
+    title?: string;
     color?: DefaultColors;
     onClick?: (e: any) => void;
     size?: DefaultSizes;
@@ -48,6 +49,7 @@ const ButtonText: FC<ButtonTextProps> = (props) => {
                 ${`text-${props.size ?? "base"}`}
                 ${props.className ?? ""}
             `}
+            title={props?.title}
             onClick={props.onClick}
         >
             <div className='flex flex-row justify-center items-center'>

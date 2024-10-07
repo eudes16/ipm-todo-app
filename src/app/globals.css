@@ -22,6 +22,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer base {
+  html {
+      @apply bg-zinc-100 text-zinc-900;
+      @apply dark:bg-zinc-900 text-white;
+  }
+
+  body {
+    @apply bg-zinc-100 text-zinc-900;
+    @apply dark:bg-zinc-900 text-white;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -151,7 +163,7 @@ body {
     @apply bg-[#107c10];
   }
 
-  .success-text {
+  .text-success {
     @apply text-[#107c10];
   }
 
@@ -428,7 +440,7 @@ body {
   }
 
   .btn-outlined-success {
-    @apply border-success success-text;
+    @apply border-success text-success;
 
     @apply hover:bg-success;
 
@@ -495,7 +507,7 @@ body {
   }
 
   .btn-text-success {
-    @apply success-text;
+    @apply text-success;
 
     @apply hover:border-success;
   }
@@ -525,8 +537,8 @@ body {
     @apply focus:outline-none focus:border-2;
     @apply focus:border-default-dark;
     @apply transition duration-300;
-    @apply text-zinc-900;
-    @apply dark:text-zinc-100 dark:bg-zinc-900;
+    @apply text-zinc-900 dark:text-zinc-300;
+    @apply  bg-zinc-300 dark:bg-zinc-900;
   }
 
   .text-field-label {
@@ -607,8 +619,62 @@ body {
     @apply text-default-dark;
   }
   
-  .bg-primary-hover {
+  .bg-primary-dropdown-item-hover {
     @apply hover:bg-primary;
     @apply hover:text-white;
   }
+
+  .bg-secondary-dropdown-item-hover {
+    @apply hover:bg-secondary;
+    @apply hover:text-white;
+  }
+
+  .bg-danger-dropdown-item-hover {
+    @apply hover:bg-danger;
+    @apply hover:text-white;
+  }
+
+  .bg-success-dropdown-item-hover {
+    @apply hover:bg-success;
+    @apply hover:text-white;
+  }
+
+  .bg-warning-dropdown-item-hover {
+    @apply hover:bg-warning;
+    @apply hover:text-white;
+  }
+
+  .bg-info-dropdown-item-hover {
+    @apply hover:bg-info;
+    @apply hover:text-white;
+  }
+
+  .bg-default-dropdown-item-hover {
+    @apply hover:bg-default;
+    @apply hover:text-white;
+  }
+
+  /* Page */
+
+  .page {
+    @apply flex h-screen w-screen;
+    @apply bg-zinc-100 text-zinc-900;
+    @apply dark:bg-zinc-900 dark:text-white;
+    @apply overflow-y-auto;
+  }
+
+  .scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-zinc-300 scrollbar-track-zinc-400;
+    @apply dark:scrollbar-thumb-zinc-700 dark:scrollbar-track-zinc-800 scrollbar-thin ;
+  }
+
+
+  .todo-status-open {
+    @apply  bg-slate-200 text-slate-800
+  }
+
+  .todo-status-close {
+    @apply  bg-green-200 text-green-800
+  }
 }
+

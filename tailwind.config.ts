@@ -15,6 +15,7 @@ const config: Config = {
     { pattern: /^bg-/ },
     { pattern: /^btn-/ },
     { pattern: /^text-field-/ },
+    { pattern: /^todo-/ },
   ],
   theme: {
     extend: {

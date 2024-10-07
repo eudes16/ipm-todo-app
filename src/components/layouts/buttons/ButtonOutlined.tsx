@@ -1,9 +1,10 @@
-import { DefaultColors, DefaultSizes } from '@/components/shared/base.types';
+import { DefaultColors, DefaultSizes } from '@/shared/base.types';
 import { cloneElement, FC } from 'react';
 
 interface ButtonOutlinedProps {
     icon?: any;
     text?: string;
+    title?: string;
     color?: DefaultColors;
     onClick?: (e: any) => void;
     size?: DefaultSizes;
@@ -42,6 +43,7 @@ const ButtonOutlined: FC<ButtonOutlinedProps> = (props) => {
 
     return (
         <button
+        title={props?.title}
             className={`
                 btn-outlined btn-outlined-${props.color ?? 'default'}
                 h-${size()}

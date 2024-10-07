@@ -1,9 +1,10 @@
-import { DefaultColors, DefaultSizes } from '@/components/shared/base.types';
+import { DefaultColors, DefaultSizes } from '@/shared/base.types';
 import { cloneElement, FC } from 'react';
 
 interface ButtonContainedProps {
     icon?: any;
     text?: string;
+    title?: string;
     color?: DefaultColors;
     onClick?: (e: any) => void;
     size?: DefaultSizes;
@@ -43,6 +44,7 @@ const ButtonContained: FC<ButtonContainedProps> = (props) => {
 
     return (
         <button
+            title={props?.title}
             className={`
                 btn btn-${props.color ?? 'default'}
                 h-${size()}

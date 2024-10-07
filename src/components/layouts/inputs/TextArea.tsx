@@ -1,4 +1,4 @@
-import { DefaultColors } from '@/components/shared/base.types';
+import { DefaultColors } from '@/shared/base.types';
 import { FC } from 'react';
 
 interface TextAreaProps {
@@ -34,6 +34,7 @@ const TextArea: FC<TextAreaProps> = (props) => {
                     className={`
                 text-field
                 text-field-${props.colors ?? "default"}
+                w-full
                 ${props.error ? "text-field-error-active" : ""}
                 ${props.className ?? ""}
                 `}

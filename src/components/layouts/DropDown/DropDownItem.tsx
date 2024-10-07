@@ -1,4 +1,4 @@
-import { DefaultColors } from '@/components/shared/base.types';
+import { DefaultColors } from '@/shared/base.types';
 import { FC } from 'react';
 
 interface DorpDownItemProps {
@@ -15,8 +15,11 @@ const DorpDownItem: FC<DorpDownItemProps> = (props) => {
     return (
         <div 
             className={`
-                flex bg-${props.color}-hover dark:hover:text-zinc-100 cursor-pointer p-2 rounded-md trasnsition duration-300 text-zinc-900 dark:text-white
-                ${selected ? `bg-${props.color}` : ""}`}
+                flex bg-${props.color ?? 'primary'}-dropdown-item-hover 
+                cursor-pointer p-2 rounded-md trasnsition duration-300 
+                dark:hover:text-zinc-100 
+                text-zinc-900
+                ${selected ? `bg-${props.color ??  'primary'}` : ""}`}
             onClick={() => onClick(value)}
         >
             {children} 

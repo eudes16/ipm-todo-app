@@ -3,7 +3,7 @@ import useOutsideClick from '@/data/hooks/useOutsideClick';
 import { IconCaretDown, IconCaretUp } from '@tabler/icons-react';
 import { FC, useEffect, useRef, useState } from 'react';
 import DorpDownItem from './DropDownItem';
-import { DefaultColors } from '@/components/shared/base.types';
+import { DefaultColors } from '@/shared/base.types';
 
 interface DropDownSpaceProps {
     open: boolean
@@ -133,19 +133,20 @@ const DropDown: FC<DropDownProps> = (props) => {
     }, [ref, ref.current?.offsetTop, open, width, offset])
     
     return (
-        <div ref={ref} className="cursor-pointer">
-            <label className="text-sm text-zinc-900 dark:text-zinc-100">{props.label ?? ""}</label>
+        <div ref={ref} className={`
+            cursor-pointer
+             w-full
+        `}>
+            <label className="text-field-label flex w-full">{props.label ?? ""}</label>
             <div
                 ref={internalRef}
                 className={`
-                    flex rounded-md h-10 
-                    text-sm
-                    gap-1
-                    items-center
+                    flex rounded-md text-sm
+                    text-field
+                    text-field-${props.color ?? "default"} 
                     text-zinc-900 dark:text-zinc-100
-                    ${props.variation === "filled" ? "bg-zinc-200" : ""}
-                    ${props.variation === "outlined" ? "bg-transparent border-2 border-zinc-700 hover:border-zinc-500" : ""}
-                    ${props.variation === "text" ? "bg-transparent" : ""}
+                    bg-zinc-100 dark:bg-zinc-900
+                    pr-2
                     ${props.className ?? ""}
                     ${props.fullWidth ? "w-full" : "min-w-max"}
                 `}
@@ -154,26 +155,29 @@ const DropDown: FC<DropDownProps> = (props) => {
                 }}
             >
 
-                <div className={`flex flex-grow h-full items-center pl-2`} onClick={toggleOpen}>
-                    {selectedOption?.[_textField] ?? "Selecione uma opção"}
-                </div>
-                <div className={`flex flex-grow-0 flex-shrink items-center`}>
-                    <button
-                        className="flex items-center justify-center hover:bg-zinc-500 p-2 rounded-full h-8 w-8 trasnsition duration-300 mr-1"
-                        onClick={toggleOpen}
-                    >
-                        {props.open ? <IconCaretUp /> : <IconCaretDown />}
-                    </button>
+                <div className={`flex w-full min-w-32 items-center justify-between gap-1`}>
+                    <div className={`flex flex-auto h-full items-center `} onClick={toggleOpen}>
+                        {selectedOption?.[_textField] ?? "Selecione uma opção"}
+                    </div>
+                    <div className={`flex flex-grow-0 flex-shrink items-center justify-end`}>
+                        <button
+                            className="flex items-center justify-center hover:bg-zinc-500 p-1 rounded-full h-6 w-6 trasnsition duration-300 mr-1"
+                            onClick={toggleOpen}
+                        >
+                            {props.open ? <IconCaretUp/> : <IconCaretDown/>}
+                        </button>
+                    </div>
                 </div>
                 <div
                     onClick={(e) => e.stopPropagation()}
                     className={`
-                    flex flex-col gap-1 max-h-48 p-1 
-                    text-zinc-900 bg-zinc-100/10 rounded-md shadow-md backdrop-blur-xl
-                    transition-colors  fixed duration-300 
-                    overflow-y-auto scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin
-                    ${open ? "scale-100 opacity-100" : "scale-125 opacity-0"}
-                `}
+                        flex flex-col gap-1 max-h-48 p-1 
+                        text-zinc-900 dark:text-zinc-100
+                        bg-zinc-100/10 rounded-md shadow-md backdrop-blur-xl
+                        transition-colors  fixed duration-300 
+                        overflow-y-auto scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin
+                        ${open ? "scale-100 opacity-100" : "scale-125 opacity-0"}
+                    `}
                     style={{
                         top: listProps.rec.y + 3 + listProps.rec.height,
                         left: listProps.rec.x + 1,
