@@ -3,6 +3,7 @@
 import ButtonContained from "@/components/layouts/buttons/ButtonContained";
 import LogoIPM from "@/components/layouts/LogoIPM";
 import Page from "@/components/layouts/Page";
+import ThemeSelector from "@/components/layouts/ThemeSelector";
 import ContextTheme, { ThemeProvider } from "@/data/context/ContextTheme";
 import { IconListCheck } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
@@ -11,13 +12,11 @@ import { useContext } from "react";
 export default function Home() {
 
     const router = useRouter();
-    const { theme } = useContext(ContextTheme);
 
     return (
         <ThemeProvider>
-
+            
             <Page
-                className={`${theme}`}
             >
                 <LogoIPM />
                 <h1 className="text-4xl font-bold text-center">

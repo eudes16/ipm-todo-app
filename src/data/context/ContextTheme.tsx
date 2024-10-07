@@ -16,7 +16,8 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
 
     const ctx = {
         theme,
-        toggleTheme
+        toggleTheme,
+        setTheme
     } as any;
     
     return (
